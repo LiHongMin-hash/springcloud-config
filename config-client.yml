@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+    - dev #当前使用的环境
+---
+server:
+  port: 6001
+spring:
+  profiles: dev #开发环境
+  application:
+    name: config-client-dev
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://eureka.server1.com:1001/eureka/
+---
+server:
+  port: 6002
+spring:
+  profiles: test #开发环境
+  application:
+    name: config-client-test
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://eureka.server1.com:1001/eureka/
